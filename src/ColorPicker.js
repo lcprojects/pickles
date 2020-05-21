@@ -36,6 +36,10 @@ class ColorPicker extends Component {
         });
     }
 
+    pickerOk = () => {
+        this.setState({ open: false });
+    }
+
     pickerClose = (e) => {
         if (e.target !== this.selection.current && this.wrapperRef && !this.wrapperRef.contains(e.target)) {
             this.setState({ open: false })
@@ -589,7 +593,7 @@ class ColorPicker extends Component {
                         <button className={classes.Format} onClick={this.changeFormat}>{this.state.format}</button>
                     </div>
                     <div className={classes.AlignRight}>
-                        <button className={classes.Set}>ok</button>
+                        <button className={classes.Set} onClick={this.pickerOk}>OK</button>
                     </div>
                 </div>
             </div>
